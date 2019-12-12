@@ -1,11 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Darkwood</title>
-    <link rel="stylesheet" type="text/css" href="index-style.css" />
-    <script src="index.js"></script>
-  </head>
+    <head>
+        <meta charset="utf-8" />
+        <title>Darkwood</title>
+        <link rel="stylesheet" type="text/css" href="index-style.css" />
+        <script src="index.js"></script>
+    </head>
 
-  <body></body>
+    <body>
+        <div id="main">
+            <div id="overlayBackground"></div>
+            <div id="crafting">
+			</br>這裡是製作頁面
+                <button onclick="closeWindow()">關閉</button>
+            </div>
+            <div id="backPack">
+                </br>這裡是背包頁面
+                <button onclick="closeWindow()">關閉</button>
+            </div>
+            <div id="looting">
+                </br>這裡是探索頁面
+                <button onclick="closeWindow()">關閉</button>
+            </div>
+            <div id="traveling">
+                </br>這裡是旅行頁面
+                <button onclick="closeWindow()">關閉</button>
+            </div>
+            <div id="status" class="maindiv"></div>
+            <div id="actions" class="maindiv">
+                <div>
+                    <a href="#" class="button" onclick="crafting()">製作</a>
+                </div>
+                <div>
+                    <a href="#" class="button" onclick="backPack()">背包</a>
+                </div>
+                <div>
+                    <a href="#" class="button" onclick="looting()">探索</a>
+                </div>
+                <div>
+                    <a href="#" class="button" onclick="traveling()">旅行</a>
+                </div>
+            </div>
+            <div id="more" class="maindiv"></div>
+        </div>
+    </body>
 </html>

@@ -1,7 +1,116 @@
-.main {
+body {
+    background-color: black;
+    font-family: Microsoft JhengHei;
+}
+
+#main {
+    border: 2px solid DarkGreen;
+    border-radius: 3%;
     position: absolute;
     left: 25%;
     width: 50%;
     height: 50%;
-    background-color: black;
+    background-color: DarkGreen;
+}
+
+#main .maindiv {
+    width: 33%;
+    height: 70%;
+    float: right;
+}
+
+#actions div {
+    float: right;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    line-height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#actions input {
+    border-radius: 50%;
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    flex-shrink: 1;
+}
+
+#actions .button {
+    width: 50%;
+    margin: 0 auto;
+    flex-shrink: 1;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+#actions .button:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(49, 34, 2);
+    border-radius: 10rem;
+    z-index: -2;
+}
+#actions .button:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: rgb(27, 19, 1);
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+}
+#actions .button:hover {
+    color: #fff;
+}
+#actions .button:hover:before {
+    width: 100%;
+}
+
+#overlayBackground {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+#crafting,
+#looting,
+#backPack,
+#traveling {
+    position: fixed;
+    border-radius: 3%;
+    display: none;
+    width: 40%;
+    height: 30%;
+    top: 10%;
+    left: 30%;
+    right: 30%;
+    bottom: 60%;
+    background-color: white;
+    z-index: 3;
 }
