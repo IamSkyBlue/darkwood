@@ -1,47 +1,72 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
+        <meta charset='utf-8' />
         <title>Darkwood</title>
-        <link rel="stylesheet" type="text/css" href="index-style.css" />
-        <script src="index.js"></script>
+        <link rel='stylesheet' type='text/css' href='index-style.css' />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src='index.js'></script>
     </head>
 
     <body>
-        <div id="main">
-            <div id="overlayBackground"></div>
-            <div id="crafting">
-			</br>這裡是製作頁面
-                <button onclick="closeWindow()">關閉</button>
+        <div class="hiddenimg">
+            <img src="fish_rod.png" class="fish_rod" style="display:none">
+        </div>
+        <div id='main'>
+            <div id='overlayBackground'></div>
+
+            
+            <div id='crafting' class='mainaction'>
+                </br>
+                <div class="scrollbar">
+                    
+                </div>
+                <div id="show_craft">
+
+                </div>
+                <div class="close"><img href="#" src="close_button.svg" class="close_button"></div>
             </div>
-            <div id="backPack">
+
+            <div id='backPack' class='mainaction'>
                 </br>這裡是背包頁面
-                <button onclick="closeWindow()">關閉</button>
+                <div class="close"><img href="#" src="close_button.svg" class="close_button"></div>
             </div>
-            <div id="looting">
+
+            <div id='looting' class='mainaction'>
                 </br>這裡是探索頁面
-                <button onclick="closeWindow()">關閉</button>
+                <div class="close"><img href="#" src="close_button.svg" class="close_button"></div>
             </div>
-            <div id="traveling">
+
+            <div id='traveling' class='mainaction'>
                 </br>這裡是旅行頁面
-                <button onclick="closeWindow()">關閉</button>
+                <div class="close"><img href="#" src="close_button.svg" class="close_button"></div>
             </div>
-            <div id="status" class="maindiv"></div>
-            <div id="actions" class="maindiv">
+
+
+            <div id='status' class='maindiv'></div>
+            <div id='actions' class='maindiv'>
                 <div>
-                    <a href="#" class="button" onclick="crafting()">製作</a>
+                    <a href='#' class='mainbutton' onclick='crafting()'>製作</a>
                 </div>
                 <div>
-                    <a href="#" class="button" onclick="backPack()">背包</a>
+                    <a href='#' class='mainbutton' onclick='backPack()'>背包</a>
                 </div>
                 <div>
-                    <a href="#" class="button" onclick="looting()">探索</a>
+                    <a href='#' class='mainbutton' onclick='looting()'>探索</a>
                 </div>
                 <div>
-                    <a href="#" class="button" onclick="traveling()">旅行</a>
+                    <a href='#' class='mainbutton' onclick='traveling()'>旅行</a>
                 </div>
             </div>
-            <div id="more" class="maindiv"></div>
+            <div id='more' class='maindiv'>
+                <div id="clock_con"><div class="clock">
+                    0 0 : 0 0
+                </div></div>
+            </br>
+                <div class="weather">
+                    天氣 : 晴天
+                </div>
+            </div>
         </div>
     </body>
 </html>

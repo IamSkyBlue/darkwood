@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Darkwood</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $( ".selected" ).each(function(index) {
+    $(this).on("click", function(){
+        // For the boolean value
+        var boolKey = $(this).data('selected');
+        // For the mammal value
+        var mammalKey = $(this).attr('id'); 
+    });
+});
+        </script>
+    </head>
+
+    </html>
+    <body>
+        <div id="dog" class="selected" data-selected="false">dog</div>
+        <div id="cat" class="selected" data-selected="true">cat</div>
+        <div id="mouse" class="selected" data-selected="false">mouse</div>
+        
+        <div class="dog"><img/></div>
+        <div class="cat"><img/></div>
+        <div class="mouse"><img/></div>
+        </body>
+</html>
+
+
+$("#crafting .scrollbar div").click(function() {
+    if (itemonhand == 0) {
+        console.log("1");
+        let imgclassname = $(this).attr("class");
+        console.log("click1" + imgclassname);
+        $(document).bind("mousemove", function(event) {
+            console.log("move" + imgclassname);
+            $("img." + imgclassname).attr({
+                style:
+                    "display:block;position:absolute;left: " +
+                    (event.pageX + 1) +
+                    "px;top: " +
+                    (event.pageY + 1) +
+                    "px;"
+            });
+        });
+        $(".close_button").attr("style", "display:none;");
+        itemonhand = 1;
+    } else {
+        console.log("2");
+        let imgclassname = $(this).attr("class");
+        $(this).click(function() {
+            console.log("click2" + imgclassname);
+            $(document).unbind("mousemove");
+            $("img." + imgclassname).attr("style", "display:none;");
+            $(".close_button").attr("style", "display:;");
+        });
+        itemonhand = 0;
+    }
+});
