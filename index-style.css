@@ -179,7 +179,7 @@ body {
     margin-top: 10%;
 }
 
-#more .clock {
+#more #clock {
     border-radius: 3%;
     margin: 0px auto;
     height: 15%;
@@ -187,13 +187,16 @@ body {
     background-color: black;
     color: white;
     text-align: center;
-    line-height: 300%;
+    line-height: 200%;
     font-size: 3vw;
 }
 
 #more #clock_con {
+    margin-top: 10%;
 }
 
-.weather {
+.info {
+    font-size: 1.5vw;
     text-align: center;
+    margin: 5%;
 }

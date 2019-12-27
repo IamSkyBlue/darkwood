@@ -6,10 +6,23 @@ let backPackSize; //1:7*3	2:10*3
 let backPackItemList; //背包物品以及排列方式
 let backPackAva; //is背包空格可用
 let date; //日期
-let weather; //天氣
+let weather; //天氣 晴天,雨天,
+let weatherlist = [
+    "sunny",
+    "sunny",
+    "sunny",
+    "sunny",
+    "sunny",
+    "sunny",
+    "rainy",
+    "rainy",
+    "rainy",
+    "foggy"
+];
 let buff;
 let debuff;
 let locations; //forest,lake,mountain,swamp,jungle,river
+let locationlist = ["forest", "lake", "mountain", "swamp", "jungle", "river"];
 let alltheitemlist;
 let itemonhand;
 let time;
@@ -85,53 +98,43 @@ function initAllData() {
     debuff = new Array();
     locations = "forest";
     itemonhand = 0;
-    time = [0, 7, 0, 0];
-    timeset(32);
+    time = [7, 0];
     console.log("datainit");
 }
 
-function initAllUI() {}
+function initAllUI() {
+    timeset(0);
+    $("");
+}
 
 function timeset(plus = 0) {
-    console.log(plus);
-    $(".clock").html(function() {
-        if (plus == 0)
-            $(".clock").text(
-                time[0] +
-                    " " +
-                    time[1] +
-                    " " +
-                    ":" +
-                    " " +
-                    time[2] +
-                    " " +
-                    time[3]
-            );
-        else {
-            if (plus >= 10) time[1] += (plus - (plus % 10)) / 10;
-            time[2] += plus % 10;
-            if (time[2] >= 6) {
-                time[2] -= 6;
-                time[1] += 1;
-            }
-            if (time[1] >= 10) {
-                time[1] -= 10;
-                time[0] += 1;
-            }
-            console.log("10");
-            $(".clock").text(
-                time[0] +
-                    " " +
-                    time[1] +
-                    " " +
-                    ":" +
-                    " " +
-                    time[2] +
-                    " " +
-                    time[3]
-            );
-        }
-    });
+    let message = "";
+    if (plus > 0) time[1] += plus;
+    while (time[1] >= 60) {
+        time[0] += 1;
+        time[1] -= 60;
+    }
+    while (time[0] >= 24) {
+        time[0] -= 24;
+        daychange();
+    }
+    message +=
+        Math.floor(time[0] / 10) +
+        " " +
+        (time[0] % 10) +
+        " : " +
+        Math.floor(time[1] / 10) +
+        " " +
+        (time[1] % 10);
+    $("#clock").html(message);
+}
+
+function daychange() {
+    date += 1;
+    $("#date").html("存活天數 : " + date);
+    let a = getRandom(0, 9);
+    weather = weatherlist[a];
+    $("#weather").html("天氣 : " + weather);
 }
 
 function crafting() {
@@ -226,3 +229,7 @@ $(function() {
         }
     );
 });
+
+function getRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
