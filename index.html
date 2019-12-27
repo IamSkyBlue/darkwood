@@ -5,6 +5,8 @@
         <title>Darkwood</title>
         <link rel='stylesheet' type='text/css' href='index-style.css' />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src='index.js'></script>
     </head>
 
@@ -24,26 +26,34 @@
                 <div id="show_craft">
 
                 </div>
-                <div class="close"><img href="#" src="close_button.svg" class="close_button"></div>
+                <div class="close"><img href="#" src="imgsrc/close_button.svg" class="close_button"></div>
             </div>
 
             <div id='backPack' class='mainaction'>
                 </br>這裡是背包頁面
-                <div class="close"><img href="#" src="close_button.svg" class="close_button"></div>
+                <div class="close"><img href="#" src="imgsrc/close_button.svg" class="close_button"></div>
             </div>
 
             <div id='looting' class='mainaction'>
                 </br>這裡是探索頁面
-                <div class="close"><img href="#" src="close_button.svg" class="close_button"></div>
+                <div class="close"><img href="#" src="imgsrc/close_button.svg" class="close_button"></div>
             </div>
 
             <div id='traveling' class='mainaction'>
                 </br>這裡是旅行頁面
-                <div class="close"><img href="#" src="close_button.svg" class="close_button"></div>
+                <div class="close"><img href="#" src="imgsrc/close_button.svg" class="close_button"></div>
             </div>
 
 
-            <div id='status' class='maindiv'></div>
+            <div id='status' class='maindiv'>
+                <button onclick="addbuff(0)">buff add</button>
+                <button onclick="removebuff(0)">buff remove</button>
+                <button onclick="addbuff(1)">debuff add</button>
+                <button onclick="removebuff(1)">debuff remove</button>
+                <button onclick="timeset(10)">time+10min</button>
+                <button onclick="timeset(30)">time+30min</button>
+                <button onclick="timeset(60)">time+1hour</button>
+            </div>
             <div id='actions' class='maindiv'>
                 <div>
                     <a href='#' class='mainbutton' onclick='crafting()'>製作</a>
@@ -63,16 +73,14 @@
                     0 0 : 0 0
                 </div></div>
             <div class="info" id="date"">
-                存活天數 : 0
+                存活天數 : 1
             </div>
             <div class="info" id="weather">
                 天氣 : 晴天
             </div>
-            <button onclick="timeset(3600)">test button</button>
-            </div>
-            <div id="buffs">
-                <div id="buff"></div>
-                <div id="debuff"></div>
+            <div id="buff_con">
+                <div id="buffs"></div>
+                <div id="debuffs"></div>
             </div>
         </div>
     </body>

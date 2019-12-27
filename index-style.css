@@ -180,23 +180,61 @@ body {
 }
 
 #more #clock {
-    border-radius: 3%;
+    border-radius: 3%/15%;
     margin: 0px auto;
-    height: 15%;
     width: 70%;
     background-color: black;
     color: white;
     text-align: center;
-    line-height: 200%;
+    line-height: 100%;
     font-size: 3vw;
 }
 
 #more #clock_con {
     margin-top: 10%;
+    height: 10%;
 }
 
 .info {
     font-size: 1.5vw;
     text-align: center;
     margin: 5%;
+}
+
+#buff_con {
+    margin: auto;
+    height: 60%;
+    width: 40%;
+    background-color: darkgreen;
+}
+
+#debuffs {
+    border-radius: 5%/3%;
+    float: left;
+    height: 100%;
+    width: 45%;
+    background-color: burlywood;
+}
+
+#buffs {
+    border-radius: 5%/3%;
+    float: left;
+    height: 100%;
+    width: 45%;
+    background-color: cornflowerblue;
+    margin-right: 10%;
+}
+
+.buffimg {
+    width: 100%;
+}
+
+.bufftooltip {
+    text-align: center;
+    background: black;
+}
+
+.bufftooltip span {
+    font-size: 150%;
+    font-weight: bolder;
 }
