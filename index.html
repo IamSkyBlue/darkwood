@@ -11,11 +11,9 @@
     </head>
 
     <body>
-        <div class="hiddenimg">
-            <img src="fish_rod.png" class="fish_rod" style="display:none">
-        </div>
         <div id='main'>
             <div id='overlayBackground'></div>
+            
 
             
             <div id='crafting' class='mainaction'>
@@ -27,32 +25,109 @@
 
                 </div>
                 <div class="close"><img href="#" src="imgsrc/close_button.svg" class="close_button"></div>
+                <div id='overlayBackground5'></div>
+                <div id='craftnotice'></div>
             </div>
 
             <div id='backPack' class='mainaction'>
-                </br>這裡是背包頁面
+                <div class="scrollbar">
+                    
+                </div>
+                <div id="show_item">
+
+                </div>
                 <div class="close"><img href="#" src="imgsrc/close_button.svg" class="close_button"></div>
             </div>
 
             <div id='looting' class='mainaction'>
-                </br>這裡是探索頁面
+                </br>
+                <fieldset>
+                    <label for="toolselect">攜帶工具</label>
+                    <select name="toolselect" id="toolselect">
+                      <option selected="selected" value="hand">空手</option>
+                      <option id="tool1" value="fish_rod">魚竿</option>
+                      <option id="tool2" value="axe">斧頭</option>
+                      <option id="tool3" value="spear">長矛</option>
+                    </select>
+                 
+                    <label for="actionselect">行動方針</label>
+                    <select name="actionselect" id="actionselect">
+                        <option value="average">無特別行動方針</option>
+                        <option value="safe">安全第一</option>
+                        <option value="loot">努力蒐集</option>
+                        <option value="save">節省體力</option>
+                        <option value="lootall">全力蒐集</option>
+                    </select>
+                 
+                    <label for="timeselect"">探索時間</label>
+                    <select name="timeselect" id="timeselect">
+                      <option value=1 selected="selected">1小時</option>
+                      <option value=2 >2小時</option>
+                      <option value=3>3小時</option>
+                    </select>
+                  </fieldset>
+                  <div id="lootingbutton">
+                    <a href='#' class='mainbutton' onclick='golooting()'>出發!!</a>
+                  </div>
                 <div class="close"><img href="#" src="imgsrc/close_button.svg" class="close_button"></div>
+                <div id='overlayBackground4'></div>
+                <div id='lootresult'></div>
             </div>
 
             <div id='traveling' class='mainaction'>
-                </br>這裡是旅行頁面
-                <div class="close"><img href="#" src="imgsrc/close_button.svg" class="close_button"></div>
+                <img class="travelimg" id="mountain" title="<span>山岳</span></br>與眾不同的高度導致資源稀少，相對的其漂亮的風景會讓人身心舒暢" src="探索地圖/山.jpg">
+            <img class="travelimg" id="river" title="<span>河川</span></br>河流是孕育萬物的生命線，河水清澈，可以直接看到其中許多魚類生活其中，可是看似平靜的河流可能暗藏急流與漩渦" src="探索地圖/河.jpg">
+            <img class="travelimg" id="swamp" title="<span>沼澤</span></br>沼澤是陸生生態系統和水生生態系統之間的過渡性地帶，其瘴癘之氣可能導致心情鬱悶" src="探索地圖/沼澤.jpg">
+            <img class="travelimg" id="forest" title="<span>森林</span></br>森林是許多動物和植物物種的棲息地,豐富的物種同時也代表更多未知生物" src="探索地圖/森林.jpg">
+            <img class="travelimg" id="lake" title="<span>湖泊</span></br>豐富的生物鏈使得湖中魚種豐富，是個較為平靜的地區" src="探索地圖/湖泊.jpg">
+            <img class="travelimg" id="jungle" title="<span>叢林</span></br>高大的樹木以及茂密的植物、當然還有許多會在半夜盯著你的發亮眼睛" src="探索地圖/叢林.jpg">
+            <div class="close"><img href="#" src="imgsrc/close_button.svg" class="close_button"></div>
+            <div id='overlayBackground2'></div>
+            <div id="travelcomf"><div id='travelmsg'>旅行至<p>湖泊</p>需耗時3小時</div>
+                    <a href='#' id='gotraveling' class='mainbutton' onclick='gotraveling()'>出發!!</a>
+                    <a href='#' class='mainbutton' id='cancel'>取消</a>
+                </div>
             </div>
 
 
             <div id='status' class='maindiv'>
-                <button onclick="addbuff(0)">buff add</button>
-                <button onclick="removebuff(0)">buff remove</button>
-                <button onclick="addbuff(1)">debuff add</button>
-                <button onclick="removebuff(1)">debuff remove</button>
-                <button onclick="timeset(10)">time+10min</button>
-                <button onclick="timeset(30)">time+30min</button>
-                <button onclick="timeset(60)">time+1hour</button>
+                <div class="container">
+                    <div class="area">
+                      <div class="message-box">血量HP</div>
+                      <div class="health-box">
+                        <div class="health-bar"></div>
+                        <div class="health-bar-text"></div>
+                      </div>
+                      <div class="message-box">食物food</div>
+                      <div class="health-box2">
+                        <div class="health-bar2"></div>
+                        <div class="health-bar-text2"></div>
+                      </div>
+                      <div class="message-box">水water</div>
+                      <div class="health-box3">
+                        <div class="health-bar3"></div>
+                        <div class="health-bar-text3"></div>
+                      </div>
+                      <div class="message-box">壓力stress</div>
+                      <div class="health-box4">
+                        <div class="health-bar4"></div>
+                        <div class="health-bar-text4"></div>
+                      </div>
+                      <div class="message-box">體溫heat</div>
+                      <div class="health-box5">
+                        <div class="health-bar5"></div>
+                        <div class="health-bar-text5"></div>
+                      </div>
+                    </div>
+              </div>
+              <div id="location">目前所在地:湖泊</br>HP↑</div>
+              <div id="fire">
+                  <div id='firetime'>剩餘時間:0分鐘</div>
+                  <img id='fireimg' src='imgsrc/fireoff.svg'></br>
+                <a href='#' id='fireonbtn' class='mainbutton''>生火</a></br>
+                <a href='#' id='addstick' class='mainbutton''>+1樹枝</a>
+                <a href='#' id='addwood' class='mainbutton''>+1木頭</a>
+              </div>
             </div>
             <div id='actions' class='maindiv'>
                 <div>
@@ -82,6 +157,9 @@
                 <div id="buffs"></div>
                 <div id="debuffs"></div>
             </div>
+            <div id='overlayBackground3'></div>
+            <div id='message'></div>
         </div>
+        <div id='overlayBackground6'></div>
     </body>
 </html>
