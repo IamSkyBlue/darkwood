@@ -442,3 +442,12 @@ body {
     width: 30%;
     height: 10%;
 }
+
+#buttom {
+    font-size: 300%;
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+}
